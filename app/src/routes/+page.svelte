@@ -1,12 +1,3 @@
-<script>
-  import Fa from 'svelte-fa';
-  import {
-    faGithub,
-    faDiscord,
-    faLinkedin
-  } from '@fortawesome/free-brands-svg-icons';
-</script>
-
 <svelte:head>
   <title>Layendan</title>
   <meta property="og:title" content="Layendan" />
