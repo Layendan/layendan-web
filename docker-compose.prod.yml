@@ -5,6 +5,12 @@ services:
     working_dir: /app
     build:
       context: ./app
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+    restart: always
 
   nginx:
     container_name: layendan-web-nginx
@@ -15,3 +21,9 @@ services:
     ports:
       - 80:80
       - 443:443
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+    restart: always
