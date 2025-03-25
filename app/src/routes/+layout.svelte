@@ -18,10 +18,10 @@
 			rel="noopener noreferrer"
 			class="btn btn-ghost btn-square btn-lg"
 		>
-			<Fa icon={faGithub} />
+			<Fa icon={faGithub} class="w-5! h-5!" />
 		</a>
 		<a href="discord://-/users/235566430693752832" class="btn btn-ghost btn-square btn-lg">
-			<Fa icon={faDiscord} />
+			<Fa icon={faDiscord} class="w-5! h-5!"/>
 		</a>
 		<a
 			href="https://www.linkedin.com/in/aidan-labourdette/"
@@ -29,7 +29,7 @@
 			rel="noopener noreferrer"
 			class="btn btn-ghost btn-square btn-lg"
 		>
-			<Fa icon={faLinkedin} />
+			<Fa icon={faLinkedin} class="w-5! h-5!"/>
 		</a>
 	</div>
 </div>
