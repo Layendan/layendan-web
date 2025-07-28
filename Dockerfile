@@ -1,15 +1,14 @@
 # Build
-FROM node:23.9-bookworm-slim AS build
+FROM node:23.11.0-alpine3.21 AS build
 WORKDIR /app
-COPY ./package.json ./
-COPY ./pnpm-lock.yaml ./
 RUN corepack enable
-RUN pnpm i --frozen-lockfile
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
 COPY . .
 RUN pnpm build
 
 # Production Dependencies
-FROM node:23.9-bookworm-slim AS dependencies
+FROM node:23.11.0-alpine3.21 AS dependencies
 WORKDIR /app
 COPY ./package.json ./
 COPY ./pnpm-lock.yaml ./
@@ -17,7 +16,7 @@ RUN corepack enable
 RUN pnpm i --production --frozen-lockfile
 
 # Runtime
-FROM node:23.9-bookworm-slim AS runtime
+FROM node:23.11.0-alpine3.21 AS runtime
 USER node:node
 WORKDIR /app
 COPY --from=dependencies --chown=node:node /app/node_modules ./node_modules
